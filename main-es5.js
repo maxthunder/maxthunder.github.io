@@ -45,7 +45,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- Always shows a header, even in smaller screens. -->\n<div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-header\" style=\"background: #000000;\">\n  <header class=\"mdl-layout__header\" style=\"background-color: #FFD034\">\n    <div class=\"mdl-layout__header-row\">\n      <!-- Title -->\n      <span class=\"task-title mdl-layout-title mdl-layout--small-screen-only\" style=\"padding-bottom: 10px;\"><a class=\"mdl-navigation__link\" [routerLink]=\"['/']\"><img src=\"../assets/maxthunder-logo.png\" height=\"48\" width=\"48\"/></a></span>\n      <span class=\"task-title mdl-layout-title mdl-layout--large-screen-only\" style=\"padding-bottom: 10px;\"><a class=\"mdl-navigation__link\" [routerLink]=\"['/']\"><img src=\"../assets/maxthunder-todolist-logo.png\" height=\"48\" width=\"458\"/></a></span>\n      <!-- Add spacer, to align navigation to the right -->\n      <div class=\"mdl-layout-spacer\"></div>\n      <!-- Navigation. We hide it in small screens. -->\n      <nav class=\"mdl-navigation\">\n        <a class=\"task-text-primary task-header-button\" [routerLink]=\"['/']\">Home</a>\n        <a class=\"task-text-primary task-header-button\" [routerLink]=\"['/completedTasks']\">Completed Tasks</a>\n      </nav>\n    </div>\n  </header>\n  <div class=\"mdl-layout__drawer\" style=\"background: #FFD034;\">\n    <span class=\"mdl-layout-title\"><img src=\"../assets/maxthunder-logo.png\" height=\"48\" width=\"48\"/></span>\n    <nav class=\"mdl-navigation\">\n      <a class=\"task-text-primary task-header-button\" [routerLink]=\"['/']\">Home</a>\n      <a class=\"task-text-primary task-header-button\" [routerLink]=\"['/completedTasks']\">Completed Tasks</a>\n    </nav>\n  </div>\n  <main class=\"mdl-layout__content\">\n    <div class=\"page-content\" style=\"min-height: 80%\">\n      <router-outlet></router-outlet>\n    </div>\n    <footer class=\"mdl-mini-footer\">\n      <div class=\"mdl-mini-footer__left-section\">\n        <div class=\"mdl-logo\"><img src=\"../assets/maxthunder-logo.png\" height=\"48\" width=\"48\"/></div>\n        <ul class=\"mdl-mini-footer__link-list\">\n          <li><a [routerLink]=\"['/']\" style=\"color: white\">Home</a></li>\n          <li><a [routerLink]=\"['/completedTasks']\" style=\"color: white\">Completed Tasks</a></li>\n          <li><a href=\"https://github.com/maxthunder\" style=\"color: white\">Developer's GitHub Page</a></li>\n        </ul>\n      </div>\n    </footer>\n  </main>\n</div>\n\n";
+    __webpack_exports__["default"] = "<!-- Always shows a header, even in smaller screens. -->\n<div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-header\" style=\"background: #000000;\">\n  <header class=\"mdl-layout__header\" style=\"background-color: #FFD034\">\n    <div class=\"mdl-layout__header-row\">\n      <!-- Title -->\n      <span class=\"task-title mdl-layout-title mdl-layout--small-screen-only\" style=\"padding-bottom: 10px;\"><a class=\"mdl-navigation__link\" [routerLink]=\"['/']\"><img src=\"../assets/maxthunder-logo.png\" height=\"48\" width=\"48\"/></a></span>\n      <span class=\"task-title mdl-layout-title mdl-layout--large-screen-only\" style=\"padding-bottom: 10px;\"><a class=\"mdl-navigation__link\" [routerLink]=\"['/']\"><img src=\"../assets/maxthunder-todolist-logo.png\" height=\"48\" width=\"458\"/></a></span>\n      <!-- Add spacer, to align navigation to the right -->\n      <div class=\"mdl-layout-spacer\"></div>\n      <!-- Navigation. We hide it in small screens. -->\n      <nav class=\"mdl-navigation\">\n        <a class=\"task-text-primary task-header-button\" [routerLink]=\"['/']\">To Do List</a>\n        <a class=\"task-text-primary task-header-button\" [routerLink]=\"['/completedTasks']\">Completed Tasks</a>\n      </nav>\n    </div>\n  </header>\n  <div class=\"mdl-layout__drawer\" style=\"background: #FFD034;\">\n    <span class=\"mdl-layout-title\"><img src=\"../assets/maxthunder-logo.png\" height=\"48\" width=\"48\"/></span>\n    <nav class=\"mdl-navigation\">\n      <a class=\"task-text-primary task-header-button\" [routerLink]=\"['/']\">To Do List</a>\n      <a class=\"task-text-primary task-header-button\" [routerLink]=\"['/completedTasks']\">Completed Tasks</a>\n    </nav>\n  </div>\n  <main class=\"mdl-layout__content\">\n    <div class=\"page-content\" style=\"min-height: 80%\">\n      <router-outlet></router-outlet>\n    </div>\n    <footer class=\"mdl-mini-footer\">\n      <div class=\"mdl-mini-footer__left-section\">\n        <div class=\"mdl-logo\"><img src=\"../assets/maxthunder-logo.png\" height=\"48\" width=\"48\"/></div>\n        <ul class=\"mdl-mini-footer__link-list\">\n          <li><a [routerLink]=\"['/']\" style=\"color: white\">To Do List</a></li>\n          <li><a [routerLink]=\"['/completedTasks']\" style=\"color: white\">Completed Tasks</a></li>\n          <li><a href=\"https://github.com/maxthunder\" style=\"color: white\">Developer's GitHub Page</a></li>\n        </ul>\n      </div>\n    </footer>\n  </main>\n</div>\n\n";
     /***/
   },
 
@@ -794,23 +794,10 @@
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
-    /* harmony import */
-
-
-    var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! rxjs */
-    "./node_modules/rxjs/_esm2015/index.js");
 
     let AppComponent = class AppComponent {
       constructor() {
         this.title = 'todo-maxthunder-app';
-        this.unsubscribe$ = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
-        this.completedTasks = [];
-      }
-
-      ngOnDestroy() {
-        this.unsubscribe$.next();
-        this.unsubscribe$.complete();
       }
 
     };
@@ -995,7 +982,6 @@
     let CompletedTasksComponent = class CompletedTasksComponent {
       constructor(taskService) {
         this.taskService = taskService;
-        this.refreshAfterRehydration = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.unsubscribe$ = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
         this.taskService.loadActiveTasks().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["take"])(1)).subscribe(data => this.tasks = data, err => console.error(err));
         this.taskService.loadCompletedTasks().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["take"])(1)).subscribe(data => {
@@ -1018,7 +1004,6 @@
       type: _services_task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"]
     }];
 
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()], CompletedTasksComponent.prototype, "refreshAfterRehydration", void 0);
     CompletedTasksComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-completed-tasks',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
@@ -1369,16 +1354,13 @@
     "./node_modules/tslib/tslib.es6.js"); // This file can be replaced during build by using the `fileReplacements` array.
     // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
     // The list of file replacements can be found in `angular.json`.
-    // export const environment = {
-    //   production: false,
-    //   hostname: "localhost",
-    //   port: 8081
-    // };
 
 
     const environment = {
       production: false,
-      hostname: "todo-maxthunder-svc.herokuapp.com"
+      //   hostname: "localhost",
+      hostname: "todo-maxthunder-svc.herokuapp.com",
+      port: 8081
     };
     /*
      * For easier debugging in development mode, you can import the following file
