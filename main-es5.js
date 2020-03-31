@@ -45,7 +45,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- Always shows a header, even in smaller screens. -->\n<div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-header\">\n  <header class=\"mdl-layout__header\">\n    <div class=\"mdl-layout__header-row\">\n      <!-- Title -->\n      <span class=\"mdl-layout-title\"><a [routerLink]=\"['/']\">To Do List</a></span>\n      <!-- Add spacer, to align navigation to the right -->\n      <div class=\"mdl-layout-spacer\"></div>\n      <!-- Navigation. We hide it in small screens. -->\n      <nav class=\"mdl-navigation mdl-layout--large-screen-only\">\n        <a class=\"mdl-navigation__link\" style=\"font-size: 16pt\" [routerLink]=\"['/']\">Home</a>\n        <a class=\"mdl-navigation__link\" style=\"font-size: 16pt\" [routerLink]=\"['/completedTasks']\">Completed Tasks</a>\n      </nav>\n    </div>\n  </header>\n  <div class=\"mdl-layout__drawer\">\n    <span class=\"mdl-layout-title\">Todo</span>\n    <nav class=\"mdl-navigation\">\n      <a class=\"mdl-navigation__link\" style=\"font-size: 16pt\" [routerLink]=\"['/']\">Home</a>\n      <a class=\"mdl-navigation__link\" style=\"font-size: 16pt\" [routerLink]=\"['/completedTasks']\">Completed Tasks</a>\n    </nav>\n  </div>\n  <main class=\"mdl-layout__content\">\n    <div class=\"page-content\">\n      <router-outlet></router-outlet>\n    </div>\n  </main>\n</div>\n";
+    __webpack_exports__["default"] = "<!-- Always shows a header, even in smaller screens. -->\n<div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-header\" style=\"background: #000000;\">\n  <header class=\"mdl-layout__header\" style=\"background-color: #FFD034\">\n    <div class=\"mdl-layout__header-row\">\n      <!-- Title -->\n      <span class=\"task-title mdl-layout-title mdl-layout--small-screen-only\" style=\"padding-bottom: 10px;\"><a class=\"mdl-navigation__link\" [routerLink]=\"['/']\"><img src=\"../assets/maxthunder-logo.png\" height=\"48\" width=\"48\"/></a></span>\n      <span class=\"task-title mdl-layout-title mdl-layout--large-screen-only\" style=\"padding-bottom: 10px;\"><a class=\"mdl-navigation__link\" [routerLink]=\"['/']\"><img src=\"../assets/maxthunder-todolist-logo.png\" height=\"48\" width=\"458\"/></a></span>\n      <!-- Add spacer, to align navigation to the right -->\n      <div class=\"mdl-layout-spacer\"></div>\n      <!-- Navigation. We hide it in small screens. -->\n      <nav class=\"mdl-navigation\">\n        <a class=\"task-text-primary task-header-button\" [routerLink]=\"['/']\">Home</a>\n        <a class=\"task-text-primary task-header-button\" [routerLink]=\"['/completedTasks']\">Completed Tasks</a>\n      </nav>\n    </div>\n  </header>\n  <div class=\"mdl-layout__drawer\" style=\"background: #FFD034;\">\n    <span class=\"mdl-layout-title\"><img src=\"../assets/maxthunder-logo.png\" height=\"48\" width=\"48\"/></span>\n    <nav class=\"mdl-navigation\">\n      <a class=\"task-text-primary task-header-button\" [routerLink]=\"['/']\">Home</a>\n      <a class=\"task-text-primary task-header-button\" [routerLink]=\"['/completedTasks']\">Completed Tasks</a>\n    </nav>\n  </div>\n  <main class=\"mdl-layout__content\">\n    <div class=\"page-content\" style=\"min-height: 80%\">\n      <router-outlet></router-outlet>\n    </div>\n    <footer class=\"mdl-mini-footer\">\n      <div class=\"mdl-mini-footer__left-section\">\n        <div class=\"mdl-logo\"><img src=\"../assets/maxthunder-logo.png\" height=\"48\" width=\"48\"/></div>\n        <ul class=\"mdl-mini-footer__link-list\">\n          <li><a [routerLink]=\"['/']\" style=\"color: white\">Home</a></li>\n          <li><a [routerLink]=\"['/completedTasks']\" style=\"color: white\">Completed Tasks</a></li>\n          <li><a href=\"https://github.com/maxthunder\" style=\"color: white\">Developer's GitHub Page</a></li>\n        </ul>\n      </div>\n    </footer>\n  </main>\n</div>\n\n";
     /***/
   },
 
@@ -65,7 +65,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"mdl-grid\" style=\"padding-left: 5%\">\n  <div *ngFor=\"let task of completedTasks\">\n    <div class=\"mdl-cell mdl-cell--4-col\"></div>\n    <div class=\"mdl-cell mdl-cell--4-col\">\n      <app-task-card [task]=\"task\" (refreshTasks)=\"getAllCompletedTasks()\"></app-task-card>\n    </div>\n    <div class=\"mdl-cell mdl-cell--4-col\"></div>\n  </div>\n</div>\n<div *ngIf=\"completedTasks.length == 0\" class=\"mdl-grid\">\n  <div class=\"mdl-cell mdl-cell--4-col\"></div>\n  <div class=\"mdl-cell mdl-cell--4-col\"><h2><i>No Completed Tasks At This Time...</i></h2></div>\n  <div class=\"mdl-cell mdl-cell--4-col\"></div>\n\n  <div class=\"mdl-cell mdl-cell--4-col\"></div>\n  <div *ngIf=\"tasks.length > 0\" class=\"mdl-cell mdl-cell--4-col\"><button [routerLink]=\"['/']\">To Do List</button></div>\n  <div *ngIf=\"tasks.length == 0\"  class=\"mdl-cell mdl-cell--4-col\"><button [routerLink]=\"['/']\">Add New Tasks</button></div>\n  <div class=\"mdl-cell mdl-cell--4-col\"></div>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"mdl-grid\" style=\"padding-left: 5%;background: #000000;\">\n  <div class=\"mdl-cell mdl-cell--2-col\"></div>\n  <div class=\"mdl-cell mdl-cell--8-col\">\n    <span>\n      <div style=\"font-size: 32pt;color: #FFFFFF;padding: 15px;\">Completed Tasks:</div>\n      </span>\n  </div>\n  <div class=\"mdl-cell mdl-cell--2-col mdl-layout--large-screen-only\"></div>\n  <div *ngFor=\"let task of completedTasks\">\n    <div class=\"mdl-cell mdl-cell--2-col mdl-layout--large-screen-only\"></div>\n    <div class=\"mdl-cell mdl-cell--8-col\">\n      <app-task-card [task]=\"task\" (refreshTasks)=\"getAllCompletedTasks()\"></app-task-card>\n    </div>\n    <div class=\"mdl-cell mdl-cell--2-col mdl-layout--large-screen-only\"></div>\n  </div>\n</div>\n\n<div *ngIf=\"completedTasks.length == 0\" class=\"mdl-grid\">\n  <div class=\"mdl-cell mdl-cell--4-col\"></div>\n  <div class=\"mdl-cell mdl-cell--4-col\"><h2><i>No Completed Tasks At This Time...</i></h2></div>\n  <div class=\"mdl-cell mdl-cell--4-col\"></div>\n\n  <div class=\"mdl-cell mdl-cell--4-col\"></div>\n  <div *ngIf=\"tasks.length > 0\" class=\"mdl-cell mdl-cell--4-col\"><button [routerLink]=\"['/']\">To Do List</button></div>\n  <div *ngIf=\"tasks.length == 0\"  class=\"mdl-cell mdl-cell--4-col\"><button [routerLink]=\"['/']\">Add New Tasks</button></div>\n  <div class=\"mdl-cell mdl-cell--4-col\"></div>\n</div>\n";
     /***/
   },
 
@@ -85,7 +85,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div [ngClass]=\"{'active-task-card-event' : !task.isCompleted, 'completed-task-card-event' : task.isCompleted}\" class=\"task-card-event mdl-card mdl-shadow--2dp\" >\n  <div class=\"mdl-card__title mdl-card--expand\">\n    <div  style=\"font-size: 14pt\">\n      {{task.description}}\n    </div>\n  </div>\n  <div class=\"mdl-card__actions mdl-card--border\" style=\"padding-left: 30px; font-size: 10pt\">\n<!--    {{task.timestamp.getMonth()}}/{{task.timestamp.getDate()}}/{{task.timestamp.getFullYear()}}-->\n    {{task.timestamp}}\n    <div class=\"mdl-layout-spacer\"></div>\n    <i *ngIf=\"task.isCompleted\" (click)=\"rehydrate()\" class=\"material-icons mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\" style=\"padding-top: 10px\">publish</i>\n    <i id=\"card-delete-button\" (click)=\"delete()\" class=\"material-icons mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\" style=\"padding-top: 10px\">close</i>\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div [ngClass]=\"{'active-task-card-event' : !task.isCompleted, 'completed-task-card-event' : task.isCompleted}\" class=\"task-card task-card-event mdl-card mdl-shadow--2dp\" >\n  <div class=\"mdl-card__title mdl-card--expand\">\n    <div style=\"font-size: 24pt;\" [ngClass]=\"{'task-text-primary' : !task.isCompleted, 'task-text-secondary' : task.isCompleted}\">\n      {{task.description}}\n    </div>\n  </div>\n  <div class=\"mdl-card__actions mdl-card--border\" style=\"padding-left: 30px; font-size: 9pt;border-color: black\" [ngClass]=\"{'task-button-primary' : !task.isCompleted, 'task-button-secondary' : task.isCompleted}\" >\n    {{task.timestamp}}\n    <div class=\"mdl-layout-spacer\"></div>\n    <div *ngIf=\"task.isCompleted\" (click)=\"rehydrate()\" [ngClass]=\"{'task-button-primary' : !task.isCompleted, 'task-button-secondary' : task.isCompleted}\" class=\"task-button icon material-icons mdl-button mdl-js-button mdl-js-ripple-effect\">publish</div>\n    <div (click)=\"delete()\" [ngClass]=\"{'task-button-task-button-primary-colored' : !task.isCompleted, 'task-button-secondary' : task.isCompleted}\" class=\"task-button icon material-icons mdl-button mdl-js-button mdl-js-ripple-effect\">close</div>\n  </div>\n</div>\n";
     /***/
   },
 
@@ -105,7 +105,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"mdl-grid\" style=\"padding-left: 5%\">\n  <div class=\"mdl-cell mdl-cell--2-col\"></div>\n  <div class=\"mdl-cell mdl-cell--8-col\">\n    <form style=\"margin-bottom: 5px;\" (submit)=\"add()\">\n      <span>\n        <input name=\"description\" [(ngModel)]=\"description\" style=\"font-size: 32pt\" class=\"mdl-textfield__input\" type=\"text\" placeholder=\"Add New Task...\"/>\n      </span>\n    </form>\n  </div>\n  <div class=\"mdl-cell mdl-cell--2-col\"></div>\n\n  <div *ngFor=\"let task of tasks\">\n    <div class=\"mdl-cell mdl-cell--2-col\"></div>\n    <div class=\"mdl-cell mdl-cell--8-col\">\n      <app-task-card [task]=\"task\" (refreshTasks)=\"loadActiveTasks()\"></app-task-card>\n    </div>\n    <div class=\"mdl-cell mdl-cell--2-col\"></div>\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"mdl-grid\" style=\"padding-left: 5%;\">\n  <div class=\"mdl-cell mdl-cell--2-col\"></div>\n  <div class=\"mdl-cell mdl-cell--8-col\">\n    <form style=\"margin-bottom: 5px;\" (submit)=\"add()\">\n      <span>\n        <input name=\"description\" [(ngModel)]=\"description\" style=\"font-size: 32pt;color: #FFFFFF\" class=\"mdl-textfield__input\" type=\"text\" placeholder=\"Add New Task...\"/>\n      </span>\n    </form>\n  </div>\n  <div class=\"mdl-cell mdl-cell--2-col mdl-layout--large-screen-only\"></div>\n  <div *ngFor=\"let task of tasks\">\n    <div class=\"mdl-cell mdl-cell--2-col mdl-layout--large-screen-only\"></div>\n    <div class=\"mdl-cell mdl-cell--8-col\">\n      <app-task-card [task]=\"task\" (refreshTasks)=\"loadActiveTasks()\"></app-task-card>\n    </div>\n    <div class=\"mdl-cell mdl-cell--2-col mdl-layout--large-screen-only\"></div>\n  </div>\n</div>\n";
     /***/
   },
 
@@ -797,27 +797,14 @@
     /* harmony import */
 
 
-    var _services_task_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! ./services/task.service */
-    "./src/app/services/task.service.ts");
-    /* harmony import */
-
-
-    var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! rxjs/operators */
-    "./node_modules/rxjs/_esm2015/operators/index.js");
-    /* harmony import */
-
-
-    var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! rxjs */
     "./node_modules/rxjs/_esm2015/index.js");
 
     let AppComponent = class AppComponent {
-      constructor(taskService) {
-        this.taskService = taskService;
+      constructor() {
         this.title = 'todo-maxthunder-app';
-        this.unsubscribe$ = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
+        this.unsubscribe$ = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
         this.completedTasks = [];
       }
 
@@ -826,19 +813,7 @@
         this.unsubscribe$.complete();
       }
 
-      hasCompletedTasks() {
-        this.taskService.loadCompletedTasks().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["take"])(1)).subscribe(data => {
-          this.completedTasks = data;
-        }, err => console.error(err));
-        return this.completedTasks.length > 0;
-      }
-
     };
-
-    AppComponent.ctorParameters = () => [{
-      type: _services_task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"]
-    }];
-
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-root',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
@@ -1037,15 +1012,6 @@
         this.taskService.loadCompletedTasks().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["take"])(1)).subscribe(data => this.completedTasks = data, err => console.error(err));
       }
 
-      deleteCompletedTask() {
-        this.taskService.loadCompletedTasks().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["take"])(1)).subscribe(data => this.completedTasks = data, err => console.error(err));
-      }
-
-      rehydrateTask(task) {
-        this.taskService.rehydrateTask(task);
-        this.refreshAfterRehydration.emit();
-      }
-
     };
 
     CompletedTasksComponent.ctorParameters = () => [{
@@ -1081,7 +1047,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n\n\n/* template retrieved from https://getmdl.io/components/index.html#cards-section */\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy90YXNrLWNhcmQvdGFzay1jYXJkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBR0Esa0ZBQWtGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy90YXNrLWNhcmQvdGFzay1jYXJkLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcblxuXG4vKiB0ZW1wbGF0ZSByZXRyaWV2ZWQgZnJvbSBodHRwczovL2dldG1kbC5pby9jb21wb25lbnRzL2luZGV4Lmh0bWwjY2FyZHMtc2VjdGlvbiAqL1xuIl19 */";
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdGFzay1jYXJkL3Rhc2stY2FyZC5jb21wb25lbnQuY3NzIn0= */";
     /***/
   },
 
@@ -1334,11 +1300,7 @@
         this.taskServicePath = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].hostname;
         this.tasks = [];
         this.completedTasks = [];
-      } // Tasks
-      // getAllTasks() {
-      //   return this.tasks.slice();
-      // }
-
+      }
 
       addNewTask(desc) {
         let task = {
@@ -1366,12 +1328,6 @@
       loadCompletedTasks() {
         const url = "https://" + this.taskServicePath + "/completedTasks";
         return this.http.get(url);
-      }
-
-      rehydrateTask(task) {
-        task.isCompleted = false;
-        this.tasks.push(task);
-        this.completedTasks.splice(this.completedTasks.indexOf(task), 1);
       }
 
     };
